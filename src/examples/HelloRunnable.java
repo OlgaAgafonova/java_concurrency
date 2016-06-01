@@ -1,4 +1,4 @@
-package java;
+package examples;
 
 public class HelloRunnable implements Runnable {
 

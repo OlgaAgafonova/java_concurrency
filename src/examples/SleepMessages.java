@@ -1,4 +1,4 @@
-package java;
+package examples;
 
 public class SleepMessages {
     public static void main(String args[]) {
