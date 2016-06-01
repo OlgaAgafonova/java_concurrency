@@ -21,19 +21,20 @@
 
 ### Папка immutableObjects
 
-    - *SynchronizedRGB.java* - определяет объект, который представляет цвет и его назвавние.
-      Если поток исполняет следующий код:
-       ```sh
+- *SynchronizedRGB.java* - определяет объект, который представляет цвет и его назвавние.
+Если поток исполняет следующий код:
+```sh
           SynchronizedRGB color = new SynchronizedRGB(0, 0, 0, "Pitch Black");
           ...
           int myColorInt = color.getRGB();      //Statement 1
           String myColorName = color.getName(); //Statement 2
-      ```
-      А другой поток вызовет **color.set** после *Statement 1*, но до *Statement 2*, переменная myColorInt не будет соответствовать myColorName. Чтобы этого избежать лучше использовать следующий код:
-       ```sh
+```
+А другой поток вызовет **color.set** после *Statement 1*, но до *Statement 2*, переменная myColorInt не будет соответствовать myColorName. Чтобы этого избежать лучше использовать следующий код:
+
+```sh
           synchronized (color) {
             int myColorInt = color.getRGB();
             String myColorName = color.getName();
         }
-      ```
-    - *ImmutableRGB.java* - неизменяемая (**immutable**) версия класса SynchronizedRGB
+```
+- *ImmutableRGB.java* - неизменяемая (**immutable**) версия класса SynchronizedRGB
