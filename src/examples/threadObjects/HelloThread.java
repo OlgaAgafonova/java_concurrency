@@ -1,12 +1,12 @@
-package examples;
+package examples.threadObjects;
 
-public class HelloRunnable implements Runnable {
+public class HelloThread extends Thread {
 
     public void run() {
         System.out.println("Hello from a thread!");
     }
 
     public static void main(String args[]) {
-        (new Thread(new HelloRunnable())).start();
+        (new HelloThread()).start();
     }
 }

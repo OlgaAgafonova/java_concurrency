@@ -1,4 +1,4 @@
-package examples;
+package examples.threadObjects;
 
 public class SimpleThreads {
     //Display a message, preceded by the name of the current thread

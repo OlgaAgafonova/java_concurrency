@@ -1,4 +1,4 @@
-package examples;
+package examples.threadObjects;
 
 public class Main {
 

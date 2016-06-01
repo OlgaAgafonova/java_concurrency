@@ -1,4 +1,4 @@
-package examples;
+package examples.threadObjects;
 
 public class SleepMessages {
     public static void main(String args[]) {
