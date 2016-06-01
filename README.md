@@ -38,3 +38,6 @@
         }
 ```
 - *ImmutableRGB.java* - неизменяемая (**immutable**) версия класса SynchronizedRGB
+
+### Папка highLevelConcurrencyObjects
+
