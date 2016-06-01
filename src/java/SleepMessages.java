@@ -1,7 +1,7 @@
 package java;
 
 public class SleepMessages {
-    public static void main(String args[]) throws InterruptedException {
+    public static void main(String args[]) {
         String importantInfo[] = {
                 "Mares eat oats",
                 "Does eat oats",
@@ -9,9 +9,14 @@ public class SleepMessages {
                 "A kid will eat ivy too"
         };
 
-        for(int i = 0; i < importantInfo.length; i++){
+        for (int i = 0; i < importantInfo.length; i++) {
             //Pause for 4 seconds
-            Thread.sleep(4000);
+            try {
+                Thread.sleep(4000);
+            } catch (InterruptedException e) {
+                //We've been interrupted: no more messages
+                return;
+            }
             //Print a message
             System.out.println(importantInfo[i]);
         }
