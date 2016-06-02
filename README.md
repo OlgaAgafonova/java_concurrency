@@ -41,3 +41,6 @@
 
 ### Папка highLevelConcurrencyObjects
 
+- *SafeLock.java* - пример решения проблемы из  *Deadlock.java*.
+- *ForkBlur.java* - пример использования **Fork/Join** для размытия изображения.
+- *AtomicInteger.java* - 
