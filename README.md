@@ -24,18 +24,18 @@
 - *SynchronizedRGB.java* - определяет объект, который представляет цвет и его назвавние.
 Если поток исполняет следующий код:
 ```sh
-          SynchronizedRGB color = new SynchronizedRGB(0, 0, 0, "Pitch Black");
-          ...
-          int myColorInt = color.getRGB();      //Statement 1
-          String myColorName = color.getName(); //Statement 2
+SynchronizedRGB color = new SynchronizedRGB(0, 0, 0, "Pitch Black");
+   ...
+   int myColorInt = color.getRGB();      //Statement 1
+String myColorName = color.getName(); //Statement 2
 ```
 А другой поток вызовет **color.set** после *Statement 1*, но до *Statement 2*, переменная myColorInt не будет соответствовать myColorName. Чтобы этого избежать лучше использовать следующий код:
 
 ```sh
-          synchronized (color) {
-            int myColorInt = color.getRGB();
-            String myColorName = color.getName();
-        }
+synchronized (color) {
+   int myColorInt = color.getRGB();
+   String myColorName = color.getName();
+}
 ```
 - *ImmutableRGB.java* - неизменяемая (**immutable**) версия класса SynchronizedRGB
 
@@ -43,4 +43,13 @@
 
 - *SafeLock.java* - пример решения проблемы из  *Deadlock.java*.
 - *ForkBlur.java* - пример использования **Fork/Join** для размытия изображения.
-- *AtomicInteger.java* - 
+- *AtomicCounter.java* - пример потокобезопасного счётчика без использования synchronised
+
+-------------------
+### Интересная информация
+
+- ThreadLocalRandom используется для получения случайного значения. ThreadLocalRandom снижает конкуренцию в пногопоточных приложениях или при использовании Fork/Join.
+```sh
+int r = ThreadLocalRandom.current() .nextInt(4, 77);
+``` 
+
